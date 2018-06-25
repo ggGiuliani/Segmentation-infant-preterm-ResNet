@@ -21,7 +21,7 @@ img_rows = 96
 img_cols = 128
 
 smooth = 1.
-epochs = 10
+epochs = 30
 
 
 def dice_coef(y_true, y_pred):
@@ -305,6 +305,7 @@ def train_and_predict(bit):
             os.mkdir(pred_dir)
         for image, image_id in zip(imgs_mask_test, imgs_bit_id_test):
             image = (image[:, :, 0] * 255.).astype(np.uint8)
+            #TODO correggere il get del filename, ora str(image_id).split('/')[-1] ritorna \\.\\raw\\train\\20160923-104921_04958 ed è sbagliato deve tornare 20160923-104921_04958
             imsave(os.path.join(pred_dir, str(image_id).split('/')[-1] + '_pred_resnet.png'), image)
 
     elif bit == 16:
@@ -316,9 +317,10 @@ def train_and_predict(bit):
             os.mkdir(pred_dir)
         for image, image_id in zip(imgs_mask_test, imgs_bit_id_test):
             image = (image[:, :, 0] * 255.).astype(np.uint8)
+            #TODO correggere il get del filename, ora str(image_id).split('/')[-1] ritorna \\.\\raw\\train\\20160923-104921_04958 ed è sbagliato deve tornare 20160923-104921_04958
             imsave(os.path.join(pred_dir, str(image_id).split('/')[-1] + '_pred_resnet.png'), image)
 
 
 if __name__ == '__main__':
     train_and_predict(8)
-    #train_and_predict(16)
+    train_and_predict(16)

@@ -1,3 +1,8 @@
+raw/train/*
+weights_resnet_8.h5
+preds_8/*
+preds_16/*
+
 raw/train/20170302-111929_02753.png
 raw/train/20150113-142558_00001.png
 raw/train/20150113-142558_00001_8.png
