@@ -1,5 +1,6 @@
 raw/train/*
 weights_resnet_8.h5
+weights_resnet_16.h5
 preds_8/*
 preds_16/*
 
