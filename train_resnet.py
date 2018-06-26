@@ -270,8 +270,6 @@ def train_and_predict(bit):
     print('Fitting model (bit = ' + str(bit) + ') ...')
     print('-' * 30)
 
-    #medel.load weight
-
     model.fit(imgs_bit_train, imgs_bit_mask_train, batch_size=32, epochs=epochs, verbose=1, shuffle=True,
               validation_split=0.2,
               callbacks=[csv_logger, model_checkpoint])
